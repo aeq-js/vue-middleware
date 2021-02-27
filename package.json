@@ -1,0 +1,14 @@
+{
+  "name": "vue-middleware",
+  "version": "0.0.1",
+  "description": "vue router navigation guard middleware",
+  "main": "./src/Middleware.ts",
+  "repository": "https://github.com/aeq-js/vue-middleware.git",
+  "author": "D3-FC<d3-fc@mail.ru>",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "vue": "^2.6.12",
+    "vue-router": "^3.5.1"
+  }
+}
