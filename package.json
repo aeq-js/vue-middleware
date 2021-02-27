@@ -1,6 +1,6 @@
 {
   "name": "@aeq/vue-middleware",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "vue router navigation guard middleware",
   "main": "./src/Middleware.ts",
   "repository": "https://github.com/aeq-js/vue-middleware.git",
@@ -11,6 +11,8 @@
     "build": "tsc"
   },
   "devDependencies": {
+    "@quasar/app": "^2.1.15",
+    "quasar": "^1.15.4",
     "typescript": "^4.2.2",
     "vue": "^2.6.12",
     "vue-router": "^3.5.1"
