@@ -1,5 +1,8 @@
 {
   "compilerOptions": {
+    "moduleResolution": "node",
+    "declaration": true,
+    "emitDeclarationOnly": true,
     "target": "es6",
     "module": "esnext",
     "strict": true,
@@ -9,6 +12,9 @@
     "lib": [
       "esnext",
       "dom"
+    ],
+    "types": [
+      "quasar"
     ]
   }
 }
