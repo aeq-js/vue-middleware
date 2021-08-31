@@ -2,7 +2,7 @@ import { NavigationGuardNext, RawLocation, Route, RouteRecord } from 'vue-router
 import Vue, { ComponentOptions } from 'vue'
 import VueRouter from 'vue-router'
 
-export { CustomRouteConfig } from './CustomRouteConfig'
+export type { CustomRouteConfig } from './CustomRouteConfig'
 
 export type Payload<V extends Vue = Vue> = {
   to: Route,
