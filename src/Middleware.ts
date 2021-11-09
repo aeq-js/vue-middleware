@@ -1,31 +1,32 @@
-import { NavigationGuardNext, RawLocation, Route, RouteRecord } from 'vue-router/types/router'
+import { NavigationGuardNext, RouteRecord } from 'vue-router'
 import Vue, { ComponentOptions } from 'vue'
-import VueRouter from 'vue-router'
-
+import  {Router} from 'vue-router'
+type RawLocation = any
+type Route = any
 export type { CustomRouteConfig } from './CustomRouteConfig'
 
-export type Payload<V extends Vue = Vue> = {
+export type Payload = {
   to: Route,
   from: Route,
-  next: NavigationGuardNext<V>,
-  router: VueRouter,
-  app: ComponentOptions<V>
+  next: NavigationGuardNext,
+  router: Router,
+  app: ComponentOptions
 }
-export type RouterGuardPayload<V extends Vue = Vue> = {
+export type RouterGuardPayload = {
   to: Route,
   from: Route,
-  next: NavigationGuardNext<V>,
-  router: VueRouter,
-  app: ComponentOptions<V>
+  next: NavigationGuardNext,
+  router: Router,
+  app: ComponentOptions
 }
 
 export type HandleResult = { abort: boolean } & RawLocation | false | undefined
 
-export abstract class Middleware<V extends Vue = Vue> {
+export abstract class Middleware {
   abstract handle (data: Payload): Promise<HandleResult>;
 }
 
-export async function handleMiddlewares<V extends Vue = Vue>
+export async function handleMiddlewares
 ({
    to,
    from,
@@ -36,7 +37,6 @@ export async function handleMiddlewares<V extends Vue = Vue>
   const middlewareList = to.matched.flatMap((options: RouteRecord) => options.meta?.middleware || [])
   let resultLocation = undefined
 
-  console.log('beforeEach middlewareList', middlewareList, to.name)
   if (!Array.isArray(middlewareList)) {
     console.error('Middleware should be an array')
     return
